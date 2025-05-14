@@ -14,7 +14,7 @@
   let canvas;
   let ctx;
   const coinImage = new Image();
-  coinImage.src = 'src/assets/coin.png'; // Path to your coin image
+  coinImage.src = '/assets/coin.png'; // Path to your coin image
 
   // Initialize particles
   function init() {

@@ -129,8 +129,8 @@ body {
 .progress-car {
   position: absolute;
   width: 100px;
-  height: 40px;
-  top: 32px;
+  height: 200px;
+  top: -60px;
   left: -10px;
   transition: left 0.5s ease;
   z-index: 2;
