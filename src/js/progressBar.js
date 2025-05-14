@@ -8,21 +8,24 @@
     incrementInterval: 100, // milliseconds
     resetDelay: 1000, // milliseconds
     progressBarSelector: '#progress-bar',
-    progressTextSelector: '#progress-percentage'
+    progressTextSelector: '#progress-percentage',
+    progressCarSelector: '#progress-car'
   };
 
   // State variables
   let currentPercent = progressConfig.startPercent;
   let progressBar;
   let progressText;
+  let progressCar;
   let animationInterval;
 
   // Initialize progress bar
   function init() {
     progressBar = document.querySelector(progressConfig.progressBarSelector);
     progressText = document.querySelector(progressConfig.progressTextSelector);
+    progressCar = document.querySelector(progressConfig.progressCarSelector);
     
-    if (!progressBar || !progressText) return;
+    if (!progressBar || !progressText || !progressCar) return;
     
     // Set initial state
     updateProgressBar();
@@ -35,6 +38,11 @@
   function updateProgressBar() {
     progressBar.style.width = `${currentPercent}%`;
     progressText.textContent = `${Math.round(currentPercent)}%`;
+    
+    // Update car position
+    const containerWidth = progressBar.parentElement.offsetWidth;
+    const carPosition = (containerWidth * currentPercent / 100) - 30; // Center the car on the progress point
+    progressCar.style.left = `${Math.max(0, Math.min(carPosition, containerWidth - 60))}px`; // Keep car within bounds
   }
 
   // Start progress animation

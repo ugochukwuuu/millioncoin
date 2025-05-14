@@ -55,13 +55,12 @@
   // Handle social button click
   function handleSocialClick(event) {
     // Prevent default behavior
-    event.preventDefault();
     
     // Get button type
     const buttonType = event.target.classList.contains('telegram') ? 'Telegram' : 'Twitter';
     
     // Show message
-    alert(`Taking you to ${buttonType}! Connect with the Million Coin community!`);
+   
     
     // Redirect (commented out for demo)
     // window.open(event.target.href, '_blank');
@@ -120,6 +119,7 @@
       confettiContainer.remove();
     }, 5500);
   }
+  
 
   // Add page load animations
   function addPageLoadAnimations() {

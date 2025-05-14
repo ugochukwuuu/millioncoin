@@ -126,39 +126,31 @@ body {
   transition: width 0.5s ease;
   box-shadow: 0 2px 4px var(--shadow);
 }
+.progress-car {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  top: 32px;
+  left: -10px;
+  transition: left 0.5s ease;
+  z-index: 2;
+}
 
+.progress-car img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 .cta-container {
   margin: var(--spacing-md) 0;
 }
 
-.cta-button {
-  padding: var(--spacing-md) var(--spacing-lg);
-  font-size: 1.25rem;
-  font-weight: 700;
-  background-color: var(--orange-dark);
-  color: var(--white);
-  border: none;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  box-shadow: 0 4px 8px var(--shadow);
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
 
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px var(--shadow);
-  background-color: var(--orange);
-}
 
-.cta-button:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 4px var(--shadow);
-}
-
+/* Existing social-button styles (keep these) */
 .social-buttons {
   display: flex;
+  flex-direction: row;
   gap: var(--spacing-md);
   margin-top: var(--spacing-md);
   flex-wrap: wrap;
@@ -180,14 +172,6 @@ body {
   justify-content: center;
 }
 
-.telegram {
-  background-color: #0088cc;
-}
-
-.twitter {
-  background-color: #1da1f2;
-}
-
 .social-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px var(--shadow);
@@ -199,6 +183,31 @@ body {
   box-shadow: 0 2px 4px var(--shadow);
 }
 
+/* New styles for Telegram and Twitter buttons */
+.telegram {
+  background-color: #0088cc; /* Telegram blue */
+}
+
+.twitter {
+  background-color: #1da1f2; /* Twitter/X blue */
+}
+
+/* Icon styling */
+.social-button i {
+  margin-right: var(--spacing-sm); /* Space between icon and text */
+  font-size: 1.5rem; /* Larger icon size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .social-button i {
+    font-size: 1.2rem; /* Slightly smaller icons on mobile */
+  }
+  .social-button {
+    width: 100%; /* Full width on mobile */
+    padding: var(--spacing-sm);
+  }
+}
 .footer {
   text-align: center;
   margin-top: var(--spacing-xl);
