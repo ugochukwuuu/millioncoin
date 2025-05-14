@@ -1,6 +1,5 @@
 // Main JavaScript for Million Coin website
 
-  import "./particles.js"
   import "./progressBar.js"
   import "./mascot.js"
 
